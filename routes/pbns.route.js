@@ -1,0 +1,13 @@
+const controller = require("../controllers/pbns.controller");
+const router = require('express').Router();
+
+
+module.exports = app => {
+
+    router.post("/getLinkedin", controller.getLinkedin);
+    router.post("/getTwitter", controller.getTwitter);
+
+    // app.use('/api/products', [authJwt.verifyToken, verifyMembership.checkMembership], router);
+    app.use('/api', router);
+    // app.use('/api/products',[authJwt.verifyToken], router);
+  };

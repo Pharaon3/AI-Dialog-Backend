@@ -40,7 +40,7 @@ async function requestTweet(title, content) {
 }
 
 async function requestLinkedinImage (title, content) {
-  const image = await openai.images.generate({ prompt: "Give me a simple linkedin post image. Title is " + title + " and content is : " + content });
+  const image = await openai.images.generate({ prompt: "Give me a simple linkedin post image based on the following data. Image should not just letters, but can make viewers understand the post. Title is " + title + " and content is : " + content });
   console.log(image.data);
   return image.data;
 }

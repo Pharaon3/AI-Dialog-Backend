@@ -1,6 +1,7 @@
 const db = require("../models");
 const Pbns = db.pbns;
 const moment = require('moment');
+var OPENAI_API_KEY   = process.env.OPENAI_API_KEY;
 // Retrieve all products from the database.
 exports.getLinkedin = async (req, res) => {
   const content = await requestLinkedin(req.body.title, req.body.content);
@@ -19,7 +20,7 @@ exports.findOne = (req, res) => {
 
 const OpenAI = require("openai");
 
-const openai = new OpenAI();
+const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 async function requestLinkedin(title, content) {
   const completion = await openai.chat.completions.create({

@@ -7,7 +7,7 @@ var OPENAI_API_KEY   = process.env.OPENAI_API_KEY;
 // Retrieve all products from the database.
 exports.getLinkedin = async (req, res) => {
   const content = await requestLinkedin(req.body.title, req.body.content);
-  const image = await requestLinkedinImage(req.body.title, content);
+  const image = await requestLinkedinImage(req.body.title, req.body.content);
   res.status(200).send({ title: req.body.title, content: content, image: image });
 };
 exports.getTwitter = async (req, res) => {

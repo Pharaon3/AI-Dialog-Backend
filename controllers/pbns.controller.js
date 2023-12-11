@@ -49,7 +49,7 @@ async function requestTweet(title, content) {
 }
 
 async function requestLinkedinImage(title, content) {
-  const image = await openai.images.generate({ prompt: "Give me a simple linkedin post image based on the following data. Image should not just letters, but can make viewers understand the post. Title is " + title + " and content is : " + content.substring(0, 500) });
+  const image = await openai.images.generate({ prompt: "Give me a simple linkedin post image based on the following data. I need result image not just letters, but can make viewers understand the post. Title is " + title + " and content is : " + content.substring(0, 500) });
   // const image1 = await openai.createImageVariation(
   //   image="https://lh3.googleusercontent.com/OkPvii8KHh8AnK4lJITCKYDf8Unr5_jaPAjjF468zwHWQCTAgtwteb7IcQuW3hstG1YNKxhFa1TBfiFWCrkeUWVU6ysB7MfMzE7OPDLvciL4TVrzgQ=w625-h350-n-nu-rw",
   //   n=2,

@@ -1,6 +1,8 @@
 const db = require("../models");
 const Pbns = db.pbns;
 const moment = require('moment');
+require('dotenv').config();
+
 var OPENAI_API_KEY   = process.env.OPENAI_API_KEY;
 // Retrieve all products from the database.
 exports.getLinkedin = async (req, res) => {

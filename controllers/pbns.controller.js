@@ -23,7 +23,10 @@ const openai = new OpenAI();
 
 async function requestLinkedin(title, content) {
   const completion = await openai.chat.completions.create({
-    messages: [{ role: "system", content: "Give me a simple linkedin post contents in Hebew based on the following data not just translate but modify it. Title is " + title + " and content is similar to : " + content }],
+    messages: [{ 
+      role: "system", 
+      content: "Give me a simple linkedin post contents in Hebew based on the following data not just translate but modify it. Title is " + title + " and content is similar to : " + content 
+    }],
     model: "gpt-3.5-turbo",
   });
   console.log("linkedin post: " + completion?.choices[0]?.message?.content);
@@ -32,15 +35,24 @@ async function requestLinkedin(title, content) {
 
 async function requestTweet(title, content) {
   const completion = await openai.chat.completions.create({
-    messages: [{ role: "system", content: "Give me a simple Tweet post contents with character limitation of Twitter in Hebew based on the following data not just translate but modify it. Title is " + title + " and content is similar to: " + content }],
+    messages: [{ 
+      role: "system", 
+      content: "Give me a simple Tweet post contents with character limitation of Twitter in Hebew based on the following data not just translate but modify it. Title is " + title + " and content is similar to: " + content 
+    }],
     model: "gpt-3.5-turbo",
   });
   console.log("Tweet: " + completion?.choices[0]?.message?.content);
   return completion?.choices[0]?.message?.content;
 }
 
-async function requestLinkedinImage (title, content) {
+async function requestLinkedinImage(title, content) {
   const image = await openai.images.generate({ prompt: "Give me a simple linkedin post image based on the following data. Image should not just letters, but can make viewers understand the post. Title is " + title + " and content is : " + content });
+  const image1 = await openai.createImageVariation(
+    image="https://lh3.googleusercontent.com/OkPvii8KHh8AnK4lJITCKYDf8Unr5_jaPAjjF468zwHWQCTAgtwteb7IcQuW3hstG1YNKxhFa1TBfiFWCrkeUWVU6ysB7MfMzE7OPDLvciL4TVrzgQ=w625-h350-n-nu-rw",
+    n=2,
+    size="1024x1024"
+  )
   console.log(image.data);
+  console.log(image1.data);
   return image.data;
 }

@@ -28,7 +28,7 @@ async function requestLinkedin(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{ 
       role: "system", 
-      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content + ". And TRANSLATE THE POST IN HEBREW." 
+      content: "Generate a unique and engaging LinkedIn post in Hebrew. Start with the title: " + title + " and the content: " + content + ". However, I want the new post to have a fresh perspective and unique insights. Focus on adding personal experiences, industry-specific details, or relevant anecdotes to make it distinct. Emphasize the importance of the topic and provide valuable information that will resonate with the LinkedIn audience. Please ensure that the tone is professional and appropriate for a business platform like LinkedIn."
     }],
     model: "gpt-3.5-turbo",
   });
@@ -40,7 +40,7 @@ async function requestTweet(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{ 
       role: "system", 
-      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own Tweet to fit tweet's character limitation. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content  + ". And TRANSLATE THE POST IN HEBREW." 
+      content: "Generate a unique and engaging Tweet in Hebrew with character limitation of tweet. Start with the title: " + title + " and the content: " + content + ". However, I want the new post to have a fresh perspective and unique insights. Focus on adding personal experiences, industry-specific details, or relevant anecdotes to make it distinct. Emphasize the importance of the topic and provide valuable information that will resonate with the LinkedIn audience. Please ensure that the tone is professional and appropriate for a business platform like LinkedIn."
     }],
     model: "gpt-3.5-turbo",
   });

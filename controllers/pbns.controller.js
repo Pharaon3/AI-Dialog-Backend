@@ -28,7 +28,7 @@ async function requestLinkedin(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{ 
       role: "system", 
-      content: "Give me a simple linkedin post contents in Hebew based on the following data not just translate but modify it. Title is " + title + " and content is similar to : " + content 
+      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content 
     }],
     model: "gpt-3.5-turbo",
   });
@@ -40,7 +40,7 @@ async function requestTweet(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{ 
       role: "system", 
-      content: "Give me a simple Tweet post contents with character limitation of Twitter in Hebew based on the following data not just translate but modify it. Title is " + title + " and content is similar to: " + content 
+      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own Tweet to fit tweet's character limitation. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content 
     }],
     model: "gpt-3.5-turbo",
   });
@@ -49,7 +49,7 @@ async function requestTweet(title, content) {
 }
 
 async function requestLinkedinImage(title, content) {
-  const image = await openai.images.generate({ prompt: "Linkedin Post background, NO LETTERS. The Linkedin post title is " + title + " and content is : " + content.substring(0, 500) });
+  const image = await openai.images.generate({ prompt: "Generate a professional and visually appealing graphic to accompany the LinkedIn post below. The post is titled " + title + " and its content is as follows:" + content.substring(0, 500) });
   // const image1 = await openai.createImageVariation(
   //   image="https://lh3.googleusercontent.com/OkPvii8KHh8AnK4lJITCKYDf8Unr5_jaPAjjF468zwHWQCTAgtwteb7IcQuW3hstG1YNKxhFa1TBfiFWCrkeUWVU6ysB7MfMzE7OPDLvciL4TVrzgQ=w625-h350-n-nu-rw",
   //   n=2,

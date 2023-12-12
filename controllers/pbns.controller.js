@@ -10,7 +10,7 @@ exports.getLinkedin = async (req, res) => {
   const image = await requestLinkedinImage(req.body.title, req.body.content);
   res.status(200).send({ title: req.body.title, content: content, image: image });
 };
-exports.getTwitter = async (req, res) => {
+exports.getTweet = async (req, res) => {
   const content = await requestTweet(req.body.title, req.body.content);
   res.status(200).send({ title: "Title", content: content });
 };

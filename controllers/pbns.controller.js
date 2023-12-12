@@ -28,7 +28,7 @@ async function requestLinkedin(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{ 
       role: "system", 
-      content: "Take inspiration from the following post in Hebrew, but rephrase and add unique insights to make it your own. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content 
+      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content + ". And TRANSLATE THE POST IN HEBREW." 
     }],
     model: "gpt-3.5-turbo",
   });
@@ -40,7 +40,7 @@ async function requestTweet(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{ 
       role: "system", 
-      content: "Take inspiration from the following post in Hebrew, but rephrase and add unique insights to make it your own Tweet to fit tweet's character limitation. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content 
+      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own Tweet to fit tweet's character limitation. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content  + ". And TRANSLATE THE POST IN HEBREW." 
     }],
     model: "gpt-3.5-turbo",
   });

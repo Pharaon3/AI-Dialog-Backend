@@ -50,12 +50,5 @@ async function requestTweet(title, content) {
 
 async function requestLinkedinImage(title, content) {
   const image = await openai.images.generate({ prompt: "Generate a professional and visually appealing graphic to accompany the LinkedIn post below. The post is titled " + title + " and its content is as follows:" + content.substring(0, 500) });
-  // const image1 = await openai.createImageVariation(
-  //   image="https://lh3.googleusercontent.com/OkPvii8KHh8AnK4lJITCKYDf8Unr5_jaPAjjF468zwHWQCTAgtwteb7IcQuW3hstG1YNKxhFa1TBfiFWCrkeUWVU6ysB7MfMzE7OPDLvciL4TVrzgQ=w625-h350-n-nu-rw",
-  //   n=2,
-  //   size="1024x1024"
-  // )
-  console.log(image.data);
-  // console.log(image1.data);
   return image.data;
 }

@@ -7,12 +7,14 @@ var OPENAI_API_KEY   = process.env.OPENAI_API_KEY;
 // Retrieve all products from the database.
 exports.getLinkedin = async (req, res) => {
   const content = await requestLinkedin(req.body.title, req.body.content);
+  const contentHebrew = await requestLinkedin(content);
   const image = await requestLinkedinImage(req.body.title, req.body.content);
-  res.status(200).send({ title: req.body.title, content: content, image: image });
+  res.status(200).send({ title: req.body.title, content: contentHebrew, image: image });
 };
 exports.getTweet = async (req, res) => {
   const content = await requestTweet(req.body.title, req.body.content);
-  res.status(200).send({ title: "Title", content: content });
+  const contentHebrew = await requestLinkedin(content);
+  res.status(200).send({ title: "Title", content: contentHebrew });
 };
 
 // Find a single product with an id
@@ -28,7 +30,7 @@ async function requestLinkedin(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{ 
       role: "system", 
-      content: "Generate a unique and engaging LinkedIn post in Hebrew. Start with the title: " + title + " and the content: " + content + ". However, I want the new post to have a fresh perspective and unique insights. Focus on adding personal experiences, industry-specific details, or relevant anecdotes to make it distinct. Emphasize the importance of the topic and provide valuable information that will resonate with the LinkedIn audience. Please ensure that the tone is professional and appropriate for a business platform like LinkedIn."
+      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content
     }],
     model: "gpt-3.5-turbo",
   });
@@ -40,11 +42,22 @@ async function requestTweet(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{ 
       role: "system", 
-      content: "Generate a unique and engaging Tweet in Hebrew with character limitation of tweet. Start with the title: " + title + " and the content: " + content + ". However, I want the new post to have a fresh perspective and unique insights. Focus on adding personal experiences, industry-specific details, or relevant anecdotes to make it distinct. Emphasize the importance of the topic and provide valuable information that will resonate with the LinkedIn audience. Please ensure that the tone is professional and appropriate for a business platform like LinkedIn."
+      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own Tweet to fit tweet's character limitation. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content
     }],
     model: "gpt-3.5-turbo",
   });
   console.log("Tweet: " + completion?.choices[0]?.message?.content);
+  return completion?.choices[0]?.message?.content;
+}
+
+async function requestHebrew(content) {
+  const completion = await openai.chat.completions.create({
+    messages: [{ 
+      role: "system", 
+      content: "Transalte it in Hebrew. " + content
+    }],
+    model: "gpt-3.5-turbo",
+  });
   return completion?.choices[0]?.message?.content;
 }
 

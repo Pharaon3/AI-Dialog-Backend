@@ -47,7 +47,7 @@ for row in pytorchData:
         src = img_element.get_attribute("src")
         # Append the src value to the array
         imgArray.append(src)
-    outData.append({"title": row["title"], "content": row["content"], "link": row["link"], "imgSource": imgArray, "content1": content1 "time": formatted_datetime})=
+    outData.append({"title": row["title"], "content": row["content"], "link": row["link"], "imgSource": imgArray, "content1": content1, "time": formatted_datetime})=
 
 with open('../json/scaned pytorch.json', 'r') as file:
     # Load the JSON data from the file

@@ -1,7 +1,9 @@
 const db = require("../models");
 const Pbns = db.pbns;
 const moment = require('moment');
+const fs = require('fs');
 require('dotenv').config();
+const path = require('path');
 
 var OPENAI_API_KEY   = process.env.OPENAI_API_KEY;
 // Retrieve all products from the database.
@@ -16,6 +18,36 @@ exports.getTweet = async (req, res) => {
   const contentHebrew = await requestHebrew(content);
   res.status(200).send({ title: "Title", content: contentHebrew });
 };
+
+// provide each data
+
+exports.getJson = (req, res) => {
+  const title = req.body.title;
+  const filePath = path.join(__dirname, '../json/scaned ' + req.body.path + '.json');
+
+  // Read the JSON file
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error reading JSON file');
+      return;
+    }
+
+    // Parse the JSON data
+    let jsonContents;
+    try {
+      jsonContents = JSON.parse(data);
+    } catch (err) {
+      console.error(err);
+      res.status(500).send('Error parsing JSON file');
+      return;
+    }
+
+    // Send the JSON contents in the response
+    res.status(200).send({ title: title, content: jsonContents });
+  });
+};
+
 
 // Find a single product with an id
 exports.findOne = (req, res) => {

@@ -8,12 +8,14 @@ const path = require('path');
 var OPENAI_API_KEY   = process.env.OPENAI_API_KEY;
 // Retrieve all products from the database.
 exports.getLinkedin = async (req, res) => {
+  console.log("Linkedin Request: ", req?.body?.title);
   const content = await requestLinkedin(req.body.title, req.body.content);
   const contentHebrew = await requestHebrew(content);
   const image = await requestLinkedinImage(req.body.title, req.body.content);
   res.status(200).send({ title: req.body.title, content: contentHebrew, image: image });
 };
 exports.getTweet = async (req, res) => {
+  console.log("Tweet Request: ", req?.body?.title);
   const content = await requestTweet(req.body.title, req.body.content);
   const contentHebrew = await requestHebrew(content);
   res.status(200).send({ title: "Title", content: contentHebrew });
@@ -44,6 +46,7 @@ exports.getJson = (req, res) => {
     }
 
     // Send the JSON contents in the response
+    console.log("Json Requested: ", title);
     res.status(200).send({ title: title, content: jsonContents });
   });
 };
@@ -66,7 +69,6 @@ async function requestLinkedin(title, content) {
     }],
     model: "gpt-3.5-turbo",
   });
-  console.log("linkedin post: " + completion?.choices[0]?.message?.content);
   return completion?.choices[0]?.message?.content;
 }
 
@@ -78,7 +80,6 @@ async function requestTweet(title, content) {
     }],
     model: "gpt-3.5-turbo",
   });
-  console.log("Tweet: " + completion?.choices[0]?.message?.content);
   return completion?.choices[0]?.message?.content;
 }
 

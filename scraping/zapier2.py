@@ -36,10 +36,10 @@ imgSources = []
 with open('zapier1.csv', 'r') as file:
     reader = csv.reader(file)
     for row in reader:
-        links.append(row[0])  # Assuming the links are in the first column
-        titles.append(row[1])  # Assuming the links are in the first column
-        contents.append(row[2])  # Assuming the links are in the first column
-        imgSources.append(row[3])  # Assuming the links are in the first column
+        links.append(row[0])  
+        titles.append(row[1])  
+        contents.append(row[2])  
+        imgSources.append(row[3])  
         print("link: " + row[0])
 driver = webdriver.Chrome()  # Replace with the appropriate webdriver for your browser
 outData = []
@@ -53,10 +53,6 @@ for c in range (0, len(links)):
     content1 = driver.find_elements(By.TAG_NAME, "article")[0].text
     print("link: " + link)
     outData.append({"title": title, "content": content, "content1": content1, "link": link, "imgSource": [imgSource], "time": formatted_datetime})
-    # Use Selenium to interact with the webpage and scrape the data you need
-# with open("make.json", "w") as file:
-#     json.dump(outData, file)
-# driver.quit()
 
 with open('../json/scaned zapier.json', 'r') as file:
     # Load the JSON data from the file

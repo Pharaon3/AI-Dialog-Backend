@@ -1,37 +1,110 @@
 [
     {
         "link": "https://deepmind.google/discover/blog/google-deepmind-at-neurips-2023/",
-        "imgSource": ["https://lh3.googleusercontent.com/MDme_Q62zVqvTUs5uwaI3Ggy2rWIujPt2elkusnUuCA4wEo79V9mabIg66j9cr9zMso-LObOVcj6_ZnrgSMUKn6fl52kxOUEjcigXtDZ2UMuosX3-2s=w400-h225-n-nu-rw 1x, https://lh3.googleusercontent.com/MDme_Q62zVqvTUs5uwaI3Ggy2rWIujPt2elkusnUuCA4wEo79V9mabIg66j9cr9zMso-LObOVcj6_ZnrgSMUKn6fl52kxOUEjcigXtDZ2UMuosX3-2s=w800-h450-n-nu-rw 2x"],
+        "imgSource": [
+            "https://lh3.googleusercontent.com/MDme_Q62zVqvTUs5uwaI3Ggy2rWIujPt2elkusnUuCA4wEo79V9mabIg66j9cr9zMso-LObOVcj6_ZnrgSMUKn6fl52kxOUEjcigXtDZ2UMuosX3-2s=w400-h225-n-nu"
+        ],
         "title": "Google DeepMind at NeurIPS 2023",
         "content": "The Neural Information Processing Systems (NeurIPS) is the largest artificial intelligence (AI) conference in the world. NeurIPS 2023 will be taking place December 10-16 in New Orleans, USA.Teams...",
-        "time": "2023/12/09 18:34:45"
+        "time": "2023/12/10 15:57:58"
     },
     {
         "link": "https://blog.google/technology/ai/google-gemini-ai",
-        "imgSource": ["https://lh3.googleusercontent.com/Q0zuCWPmwm3zjORWtYXpWMeRIyQ55zVbcviNcZ-LIFexKaQyL9i9T0TZwHHC_bsvynuW_CkfM6AoLkgw9JTt6GGRRAX2lT2Qx4ekC69vhB11vcj3=w400-h225-n-nu-rw 1x, https://lh3.googleusercontent.com/Q0zuCWPmwm3zjORWtYXpWMeRIyQ55zVbcviNcZ-LIFexKaQyL9i9T0TZwHHC_bsvynuW_CkfM6AoLkgw9JTt6GGRRAX2lT2Qx4ekC69vhB11vcj3=w800-h450-n-nu-rw 2x"],
+        "imgSource": [
+            "https://lh3.googleusercontent.com/Q0zuCWPmwm3zjORWtYXpWMeRIyQ55zVbcviNcZ-LIFexKaQyL9i9T0TZwHHC_bsvynuW_CkfM6AoLkgw9JTt6GGRRAX2lT2Qx4ekC69vhB11vcj3=w400-h225-n-nu"
+        ],
         "title": "Introducing Gemini: our largest and most capable AI model",
         "content": "Making AI more helpful for everyone",
-        "time": "2023/12/10 18:34:45"
+        "time": "2023/12/10 15:57:58"
     },
     {
         "link": "https://deepmind.google/discover/blog/millions-of-new-materials-discovered-with-deep-learning/",
-        "imgSource": ["https://lh3.googleusercontent.com/mq3mFiVHSVuszhJMt-Nz4jckN5qy3cAckEIdNYDPhy8UHjxk4VkGFriqo8sA76teioNQ2fC3qgMH7FJfPc0L5JJPppXiZzHP7Rl3UodlU4IC4TWw=w400-h225-n-nu-rw 1x, https://lh3.googleusercontent.com/mq3mFiVHSVuszhJMt-Nz4jckN5qy3cAckEIdNYDPhy8UHjxk4VkGFriqo8sA76teioNQ2fC3qgMH7FJfPc0L5JJPppXiZzHP7Rl3UodlU4IC4TWw=w800-h450-n-nu-rw 2x"],
+        "imgSource": [
+            "https://lh3.googleusercontent.com/mq3mFiVHSVuszhJMt-Nz4jckN5qy3cAckEIdNYDPhy8UHjxk4VkGFriqo8sA76teioNQ2fC3qgMH7FJfPc0L5JJPppXiZzHP7Rl3UodlU4IC4TWw=w400-h225-n-nu"
+        ],
         "title": "Millions of new materials discovered with deep learning",
         "content": "We share the discovery of 2.2 million new crystals  \u2013  equivalent to nearly 800 years\u2019 worth of knowledge. We introduce Graph Networks for Materials Exploration (GNoME), our new deep learning tool...",
-        "time": "2023/12/09 18:34:45"
+        "time": "2023/12/10 15:57:58"
     },
     {
-        "link": "https://deepmind.google/about/responsibility-safety/",
-        "imgSource": ["https://lh3.googleusercontent.com/OkPvii8KHh8AnK4lJITCKYDf8Unr5_jaPAjjF468zwHWQCTAgtwteb7IcQuW3hstG1YNKxhFa1TBfiFWCrkeUWVU6ysB7MfMzE7OPDLvciL4TVrzgQ=w625-h350-n-nu-rw 1x, https://lh3.googleusercontent.com/OkPvii8KHh8AnK4lJITCKYDf8Unr5_jaPAjjF468zwHWQCTAgtwteb7IcQuW3hstG1YNKxhFa1TBfiFWCrkeUWVU6ysB7MfMzE7OPDLvciL4TVrzgQ=w1250-h700-n-nu-rw 2x"],
-        "title": "Responsibility &amp; Safety",
-        "content": "We help anticipate a broad spectrum of AI-related risks, explore ways of preventing them from happening, and find ways to address them if they do.",
-        "time": "2023/12/11 18:34:45"
+        "link": "https://deepmind.google/discover/blog/transforming-the-future-of-music-creation/",
+        "imgSource": [
+            "https://lh3.googleusercontent.com/70pfB4mkyAIa6b-sVbFCYSIn-BQEic4njNvDNsaKWd8D1mst0tTiC1cUl1dIMdz1f3dDvWCMCEVzIKe4PcfvB6Zs3yvD893D2s4ociiFPqyOagWgeQ=w400-h225-n-nu"
+        ],
+        "title": "Transforming the future of music creation",
+        "content": "Announcing our most advanced music generation model and two new AI experiments, designed to open a new playground for creativity",
+        "time": "2023/12/11 15:57:58"
     },
     {
-        "link": "https://ai.google/responsibility/principles/",
-        "imgSource": ["https://lh3.googleusercontent.com/1G0Qe-CimP0LgqFJplCxdpDCc9e1fXhFzYdYwkZ4NnUiR-Jc3odWTxm1z0RJBvNKiMOkLMnSDHIXS4nZ0jBRBEIuOLbqdNDS7yPrquyyanIMrQKmCA=w625-h350-n-nu-rw 1x, https://lh3.googleusercontent.com/1G0Qe-CimP0LgqFJplCxdpDCc9e1fXhFzYdYwkZ4NnUiR-Jc3odWTxm1z0RJBvNKiMOkLMnSDHIXS4nZ0jBRBEIuOLbqdNDS7yPrquyyanIMrQKmCA=w1250-h700-n-nu-rw 2x"],
-        "title": "AI Principles",
-        "content": "While we are optimistic about the potential of AI, we recognize that advanced technologies can raise important challenges that must be addressed clearly, thoughtfully, and affirmatively.",
-        "time": "2023/12/10 18:34:45"
+        "link": "https://deepmind.google/discover/blog/empowering-the-next-generation-for-an-ai-enabled-world/",
+        "imgSource": [
+            "https://lh3.googleusercontent.com/gGmUr1O8l6o3pnTKmrXBdLirjLfBFiGRiAXyaWZNg7IXx_QcNgMy4-QyIWOsT9w0DBUvno2_hAprwBVAQbkfZnrYJB7ywfZ6_tzgYSl-4xr799pkmXE=w400-h225-n-nu"
+        ],
+        "title": "Empowering the next generation for an AI-enabled world",
+        "content": "Experience AI's course and resources are expanding on a global scale",
+        "time": "2023/12/11 15:57:58"
+    },
+    {
+        "link": "https://deepmind.google/discover/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/",
+        "imgSource": [
+            "https://lh3.googleusercontent.com/T5elYXH1pC3daUaoPDWa11CgAe1oZSOL-gNbV8Png9k--BmotINNsEbo_SYEVQUeW_DJx-yzGLiSwZiyH4_YlTpYVW6g7n-_ip3rJkYw5cHr7TTcMw=w400-h225-n-nu"
+        ],
+        "title": "GraphCast: AI model for faster and more accurate global weather forecasting",
+        "content": "We introduce GraphCast, a state-of-the-art AI model able to make medium-range weather forecasts with unprecedented accuracy",
+        "time": "2023/12/11 15:57:58"
+    },
+    {
+        "link": "https://deepmind.google/discover/blog/a-glimpse-of-the-next-generation-of-alphafold/",
+        "imgSource": [
+            "https://lh3.googleusercontent.com/1xoO5BAUUU8kLns4myMNnKw6RRQyUk1JdlWL1M0aDiagMgaBeDA9O8Y4rYFAo9hfnzmb0cnUMrT_-cStBqnyp_zW59F5Edwbvxcy3EVmfeKS-PNgVw=w400-h225-n-nu"
+        ],
+        "title": "A glimpse of the next generation of AlphaFold",
+        "content": "Progress update: Our latest AlphaFold model shows significantly improved accuracy and expands coverage beyond proteins to other biological molecules, including ligands.",
+        "time": "2023/12/12 15:57:58"
+    },
+    {
+        "link": "https://deepmind.google/discover/blog/evaluating-social-and-ethical-risks-from-generative-ai/",
+        "imgSource": [
+            "https://lh3.googleusercontent.com/LAqM0ZkFzkDefB5oVEEPoq6p--7XcfBWEDPjl6OdcfvwN9q3leY2qWCf30_MquTn5RfpcPswiAoRns2jOKjB5_8u-vl6TqueSwamEM6U-qyJHOiujkI=w400-h225-n-nu"
+        ],
+        "title": "Evaluating social and ethical risks from generative AI",
+        "content": "Introducing a context-based framework for comprehensively evaluating the social and ethical risks of AI systems",
+        "time": "2023/12/12 15:57:58"
+    },
+    {
+        "link": "https://deepmind.google/discover/blog/scaling-up-learning-across-many-different-robot-types/",
+        "imgSource": [
+            "https://lh3.googleusercontent.com/KiNtKw6sX-3WmNln5pnEZjPMfM7VJLg0qe4VshEj_H_oXCI9hb6iGWl1DPx79WBb4EVds8mq2wUq_n9s2Lk8kkWazPtootwAUYBKxBEp64WTcEmXa6U=w400-h225-n-nu"
+        ],
+        "title": "Scaling up learning across many different robot types",
+        "content": "Robots are great specialists, but poor generalists. Typically, you have to train a model for each task, robot, and environment. Changing a single variable often requires starting from scratch. But...",
+        "time": "2023/12/12 15:57:58"
+    },
+    {
+        "link": "https://deepmind.google/discover/blog/a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases/",
+        "imgSource": [
+            "https://lh3.googleusercontent.com/HttjbwzfNz8qn8wJYElFzlG-NytzkbjSLZ82Uh3SxVJQSifSc92oVa_8KW1XGFCykaq6q9EWGOwbmnC_avxornoTHmRA5zbcQgXq792WHJRZVz302A=w400-h225-n-nu"
+        ],
+        "title": "A catalogue of genetic mutations to help pinpoint the cause of diseases",
+        "content": "New AI tool classifies the effects of 71 million \u2018missense\u2019 mutations.",
+        "time": "2023/12/13 15:57:58"
+    },
+    {
+        "link": "https://deepmind.google/discover/blog/identifying-ai-generated-images-with-synthid/",
+        "imgSource": [
+            "https://lh3.googleusercontent.com/vRTgBiobbsroKQRrwd_R7-5f7jJ_CHI54NIe248ggMUdNd0TO2uc-umRjfJI0Y8_agLxjXlX0vYmUbViE91LoWeBr9-uOIPKiOPV4P6q2g4TnHaM=w400-h225-n-nu"
+        ],
+        "title": "Identifying AI-generated images with SynthID",
+        "content": "New tool helps watermark and identify synthetic images created by Imagen",
+        "time": "2023/12/13 15:57:58"
+    },
+    {
+        "link": "https://deepmind.google/discover/blog/rt-2-new-model-translates-vision-and-language-into-action/",
+        "imgSource": [
+            "https://lh3.googleusercontent.com/ZduBtQRn2mrvSfNqkixe2XktBREieIhekS7NcboCn0E76gFVckUwNLZw74EJ5jIndzxbRoCqCY47iW1-eGi5c_JJV1DFyTmkS91vMnRalgT0rih125s=w400-h225-n-nu"
+        ],
+        "title": "RT-2: New model translates vision and language into action",
+        "content": "Robotic Transformer 2 (RT-2) is a novel vision-language-action (VLA) model that learns from both web and robotics data, and translates this knowledge into generalised instructions for robotic control.",
+        "time": "2023/12/13 15:57:58"
     }
 ]

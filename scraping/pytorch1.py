@@ -30,19 +30,20 @@ with open('pytorch1.csv', 'r') as file:
     reader = csv.reader(file)
     for row in reader:
         links.append(row[0]) 
-with open('pytorch2.csv', mode='w', newline='') as file:
-    writer = csv.writer(file)
-    for link in links:
-        driver.get(link)
-        time.sleep(2)
-        blogs = driver.find_elements(By.CSS_SELECTOR, "div.vertical-blog-container")
-        for c in range(0, len(blogs)):
-            blog = blogs[c]
-            link = blog.find_element(By.TAG_NAME, "a").get_attribute('href')
-            title = blog.find_element(By.TAG_NAME, "a").text
-            content = blog.find_elements(By.TAG_NAME, "p")[1].text
-            print(link)
-            print(title)
-            print(content)
-            writer.writerow([link, title, content])
+outData = []
+for link in links:
+    driver.get(link)
+    time.sleep(2)
+    blogs = driver.find_elements(By.CSS_SELECTOR, "div.vertical-blog-container")
+    for c in range(0, len(blogs)):
+        blog = blogs[c]
+        link = blog.find_element(By.TAG_NAME, "a").get_attribute('href')
+        title = blog.find_element(By.TAG_NAME, "a").text
+        content = blog.find_elements(By.TAG_NAME, "p")[1].text
+        print(link)
+        print(title)
+        print(content)
+        outData.append({"link": link, "title": title, "content": content})
+with open("./pytorch2.json", "w") as file:
+    json.dump(outData, file)
 driver.close()

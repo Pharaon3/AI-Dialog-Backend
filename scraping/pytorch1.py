@@ -41,5 +41,8 @@ with open('pytorch2.csv', mode='w', newline='') as file:
             link = blog.find_element(By.TAG_NAME, "a").get_attribute('href')
             title = blog.find_element(By.TAG_NAME, "a").text
             content = blog.find_elements(By.TAG_NAME, "p")[1].text
+            print(link)
+            print(title)
+            print(content)
             writer.writerow([link, title, content])
 driver.close()

@@ -1,0 +1,317 @@
+[
+    {
+        "link": "https://pytorch.org/blog/snowflake-joins-pytorch/",
+        "title": "Snowflake Joins the PyTorch Foundation as a General Member",
+        "content": ""
+    },
+    {
+        "link": "https://pytorch.org/blog/accelerating-generative-ai-2/",
+        "title": "Accelerating Generative AI with PyTorch II: GPT, Fast",
+        "content": "This post is the second part of a multi-series blog focused on how to accelerate generative AI models with pure, native PyTorch. We are excited to share a breadth of newly released PyTorch performance features alongside practical examples to see how far we can push PyTorch native performance. In part one, we showed how to accelerate Segment Anything over 8x using only pure, native PyTorch. In this blog we\u2019ll focus on LLM optimization."
+    },
+    {
+        "link": "https://pytorch.org/blog/new-features-for-ai/",
+        "title": "PyTorch 2.1 Contains New Performance Features for AI Developers",
+        "content": "We are excited to see the release of PyTorch 2.1. In this blog, we discuss the five features for which Intel made significant contributions to PyTorch 2.1:"
+    },
+    {
+        "link": "https://pytorch.org/blog/pytorch-docathon-h2-2023-wrap/",
+        "title": "\ud83c\udf89 PyTorch Docathon H2 2023 Wrap-up \ud83c\udf89",
+        "content": "We are thrilled to announce the successful completion of the Fall 2023 PyTorch Docathon! The event was a resounding success, and we want to extend our heartfelt gratitude to all the participants who made it possible. Dedication, expertise, and tireless efforts of our open-source contributors have once again helped us to improve PyTorch documentation."
+    },
+    {
+        "link": "https://pytorch.org/blog/accelerating-generative-ai/",
+        "title": "Accelerating Generative AI with PyTorch: Segment Anything, Fast",
+        "content": "This post is the first part of a multi-series blog focused on how to accelerate generative AI models with pure, native PyTorch. We are excited to share a breadth of newly released PyTorch performance features alongside practical examples of how these features can be combined to see how far we can push PyTorch native performance."
+    },
+    {
+        "link": "https://pytorch.org/blog/pytorch-compile-to-speed-up-inference/",
+        "title": "PyTorch compile to speed up inference on Llama 2",
+        "content": "In this blog, we discuss how to improve the inference latencies of the Llama 2 family of models using PyTorch native optimizations such as native fast kernels, compile transformations from torch compile, and tensor parallel for distributed inference. Our approach results in 29ms/token latency for single user requests on the 70B LLaMa model (as measured on 8 A100 GPUs). We are excited to share our findings with the community and make our code available here."
+    },
+    {
+        "link": "https://pytorch.org/blog/high-performance-llama-2/",
+        "title": "High-Performance Llama 2 Training and Inference with PyTorch/XLA on Cloud TPUs",
+        "content": "In a landscape where AI innovation is accelerating at an unprecedented pace, Meta\u2019s Llama family of open sourced large language models (LLMs) stands out as a notable breakthrough. Llama marked a significant step forward for LLMs, demonstrating the power of pre-trained architectures for a wide range of applications. Llama 2 further pushed the boundaries of scale and capabilities, inspiring advancements in language understanding, generation, and beyond."
+    },
+    {
+        "link": "https://pytorch.org/blog/amd-extends-support-for-pt-ml/",
+        "title": "AMD Extends Support for PyTorch Machine Learning Development on Select RDNA\u2122 3 GPUs with ROCm\u2122 5.7",
+        "content": "Researchers and developers working with Machine Learning (ML) models and algorithms using PyTorch can now use AMD ROCm 5.7 on Ubuntu\u00ae Linux\u00ae to tap into the parallel computing power of the Radeon\u2122 RX 7900 XTX and the Radeon\u2122 PRO W7900 graphics cards which are based on the AMD RDNA\u2122 3 GPU architecture."
+    },
+    {
+        "link": "https://pytorch.org/blog/pytorch-edge/",
+        "title": "PyTorch Edge: Enabling On-Device Inference Across Mobile and Edge Devices with ExecuTorch",
+        "content": "We are excited to announce ExecuTorch, our all-new solution for enabling on-device inference capabilities across mobile and edge devices with the backing of industry leaders like Arm, Apple, and Qualcomm Innovation Center."
+    },
+    {
+        "link": "https://pytorch.org/blog/lightning-ai-joins-pytorch/",
+        "title": "Lightning AI Joins the PyTorch Foundation as a Premier Member",
+        "content": "The PyTorch Foundation, a neutral home for the deep learning community to collaborate on the open source PyTorch framework and ecosystem, is announcing today that Lightning AI has joined as a premier member."
+    },
+    {
+        "link": "https://pytorch.org/blog/huawei-joins-pytorch/",
+        "title": "Huawei Joins the PyTorch Foundation as a Premier Member",
+        "content": "Today, the PyTorch Foundation, a neutral home for the deep learning community to collaborate on the open source PyTorch framework and ecosystem, announced that Huawei has joined as a premier member."
+    },
+    {
+        "link": "https://pytorch.org/blog/compiling-numpy-code/",
+        "title": "Compiling NumPy code into C++ or CUDA via torch.compile",
+        "content": "Quansight engineers have implemented support for tracing through NumPy code via torch.compile in PyTorch 2.1. This feature leverages PyTorch\u2019s compiler to generate efficient fused vectorized code without having to modify your original NumPy code. Even more, it also allows for executing NumPy code on CUDA just by running it through torch.compile under torch.device(\"cuda\")!"
+    },
+    {
+        "link": "https://pytorch.org/blog/flash-decoding/",
+        "title": "Flash-Decoding for long-context inference",
+        "content": "Motivation"
+    },
+    {
+        "link": "https://pytorch.org/blog/ml-model-server-resource-saving/",
+        "title": "ML Model Server Resource Saving - Transition From High-Cost GPUs to Intel CPUs and oneAPI powered Software with performance",
+        "content": "Reviewers: Yunsang Ju(Naver GplaceAI Leader), Min Jean Cho(Intel), Jing Xu(Intel), Mark Saroufim(Meta)"
+    },
+    {
+        "link": "https://pytorch.org/blog/pytorch-2-1/",
+        "title": "PyTorch 2.1: automatic dynamic shape compilation, distributed checkpointing",
+        "content": "We are excited to announce the release of PyTorch\u00ae 2.1 (release note)! PyTorch 2.1 offers automatic dynamic shape support in torch.compile, torch.distributed.checkpoint for saving/loading distributed training jobs on multiple ranks in parallel, and torch.compile support for the NumPy API."
+    },
+    {
+        "link": "https://pytorch.org/blog/new-library-updates/",
+        "title": "New Library Updates in PyTorch 2.1",
+        "content": "Summary"
+    },
+    {
+        "link": "https://pytorch.org/blog/high-performance-llama/",
+        "title": "High performance Llama 2 deployments with AWS Inferentia2 using TorchServe",
+        "content": "Recently, Llama 2 was released and has attracted a lot of interest from the machine learning community. Amazon EC2 Inf2 instances, powered by AWS Inferentia2, now support training and inference of Llama 2 models. In this post, we show low-latency and cost-effective inference of Llama-2 models on Amazon EC2 Inf2 instances using the latest AWS Neuron SDK release.  We first introduce how to create, compile and deploy the Llama-2 model and explain the optimization techniques introduced by AWS Neu..."
+    },
+    {
+        "link": "https://pytorch.org/blog/interactive-chat-gen-model/",
+        "title": "How to Build an Interactive Chat-Generation Model using DialoGPT and PyTorch",
+        "content": "The focus on interactive chat-generation (or conversational response-generation) models has greatly increased in the past several months. Conversational response-generation models such as ChatGPT and Google Bard have taken the AI world by storm. The purpose of interactive chat generation is to answer various questions posed by humans, and these AI based models use natural language processing (NLP) to generate conversations almost indistinguishable from those generated by humans."
+    },
+    {
+        "link": "https://pytorch.org/blog/announcing-docathon-h2-2023/",
+        "title": "Announcing PyTorch Docathon H2 2023",
+        "content": "We are excited to announce that we will be holding a Docathon for PyTorch on November 1, 2023! This event is an opportunity for our community to come together and improve the quality of our documentation."
+    },
+    {
+        "link": "https://pytorch.org/blog/inside-the-matrix/",
+        "title": "Inside the Matrix: Visualizing Matrix Multiplication, Attention and Beyond",
+        "content": "Use 3D to visualize matrix multiplication expressions, attention heads with real weights, and more."
+    },
+    {
+        "link": "https://pytorch.org/blog/accelerated-cpu-inference/",
+        "title": "Accelerated CPU Inference with PyTorch Inductor using torch.compile",
+        "content": "Story at a Glance"
+    },
+    {
+        "link": "https://pytorch.org/blog/graphcore-joins-pytorch/",
+        "title": "Graphcore Joins the PyTorch Foundation as a General Member",
+        "content": ""
+    },
+    {
+        "link": "https://pytorch.org/blog/automated-trace-collection/",
+        "title": "Automated trace collection and analysis",
+        "content": "In this blog, we share how we enabled the collection and analysis of PyTorch Profiler traces for training workloads without any user side code instrumentation. We leveraged Dynolog - an open source daemon for CPU and GPU telemetry to collect PyTorch Profiler traces, and analyzed the collected traces using Holistic Trace Analysis - an open source library for analyzing PyTorch Profiler traces. This toolchain has allowed engineers at Meta to accelerate their performance optimization workflows. T..."
+    },
+    {
+        "link": "https://pytorch.org/blog/pytorch-xla-spmd/",
+        "title": "PyTorch/XLA SPMD: Scale Up Model Training and Serving with Automatic Parallelization",
+        "content": "Today, we are delighted to announce PyTorch/XLA SPMD: the integration of GSPMD into PyTorch with an easy to use API. PyTorch developers seeking superior performance and scale can train and serve the largest neural networks while maximizing utilization of AI accelerators, such as Google Cloud TPUs."
+    },
+    {
+        "link": "https://pytorch.org/blog/large-scale-training-hugging-face/",
+        "title": "Large Scale Training of Hugging Face Transformers on TPUs With PyTorch/XLA FSDP",
+        "content": "AI is transforming many industries through advanced capabilities such as understanding and generating language, answering questions, and delivering accurate recommendations. These capabilities are fueled by ever-increasing size and complexity of AI models, which require vast amounts of computing power to train."
+    },
+    {
+        "link": "https://pytorch.org/blog/intel-joins-pytorch/",
+        "title": "Intel Joins the PyTorch Foundation as a Premier Member",
+        "content": ""
+    },
+    {
+        "link": "https://pytorch.org/blog/int8-quantization/",
+        "title": "INT8 Quantization for x86 CPU in PyTorch",
+        "content": "Overview"
+    },
+    {
+        "link": "https://pytorch.org/blog/hugging-face-joins/",
+        "title": "Hugging Face Joins the PyTorch Foundation as a Premier Member",
+        "content": ""
+    },
+    {
+        "link": "https://pytorch.org/blog/performant-distributed-checkpointing/",
+        "title": "Performant Distributed checkpointing in Production with IBM",
+        "content": ""
+    },
+    {
+        "link": "https://pytorch.org/blog/ibm-joins-pytorch/",
+        "title": "IBM Joins the PyTorch Foundation as a Premier Member",
+        "content": "The PyTorch Foundation, part of The Linux Foundation, is pleased to announce that IBM has joined as a premier member."
+    },
+    {
+        "link": "https://pytorch.org/blog/announcing-cpp/",
+        "title": "Announcing CPP-based S3 IO DataPipes",
+        "content": "Training large deep learning models requires large datasets. Amazon Simple Storage Service (Amazon S3) is a scalable cloud object store service used for storing large training datasets. Machine learning (ML) practitioners need an efficient data pipe that can download data from Amazon S3, transform the data, and feed the data to GPUs for training models with high throughput and low latency. In this post, we introduce the new S3 IO DataPipes for PyTorch, S3FileLister and S3FileLoader. For memo..."
+    },
+    {
+        "link": "https://pytorch.org/blog/how-to-accelerate/",
+        "title": "How to Accelerate PyTorch Geometric on Intel\u00ae CPUs",
+        "content": "Overview"
+    },
+    {
+        "link": "https://pytorch.org/blog/optimizing-libtorch/",
+        "title": "Optimizing LibTorch-based inference engine memory usage and thread-pooling",
+        "content": "Outline"
+    },
+    {
+        "link": "https://pytorch.org/blog/path-achieve-low-inference-latency/",
+        "title": "The Path to Achieve Ultra-Low Inference Latency With LLaMA 65B on PyTorch/XLA",
+        "content": "Background & State of the Art"
+    },
+    {
+        "link": "https://pytorch.org/blog/optimized-pytorch-w-graviton/",
+        "title": "Optimized PyTorch 2.0 Inference with AWS Graviton processors",
+        "content": "New generations of CPUs offer significant performance improvement in machine learning (ML) inference due to specialized built-in instructions. Combined with their flexibility, high speed of development, and low operating cost, these general-purpose processors offer an alternative ML inference solution to other existing hardware solutions."
+    },
+    {
+        "link": "https://pytorch.org/blog/join-pytorch/",
+        "title": "Join the PyTorch Foundation: Membership Now Open",
+        "content": "In September 2022, we welcomed PyTorch to the Linux Foundation from Meta, which formed the PyTorch Foundation with founding members AMD, Amazon Web Services (AWS), Google, Meta, Microsoft, and NVIDIA."
+    },
+    {
+        "link": "https://pytorch.org/blog/out-of-the-box-acceleration/",
+        "title": "Out of the box acceleration and memory savings of \ud83e\udd17 decoder models with PyTorch 2.0",
+        "content": "As part of PyTorch 2.0 release, an accelerated implementation of the attention mechanism as part of the \u201cBetter Transformer\u201d project (and known in PyTorch as Accelerated Transformers) has been added natively into PyTorch as torch.nn.functional.scaled_dot_product_attention. This implementation leverages fused kernels from FlashAttention and Memory-efficient attention, and supports both training and inference."
+    },
+    {
+        "link": "https://pytorch.org/blog/pytorch-conference-2023/",
+        "title": "PyTorch Conference 2023: Join us in San Francisco October 16-17",
+        "content": ""
+    },
+    {
+        "link": "https://pytorch.org/blog/language-identification/",
+        "title": "Language Identification: Building an End-to-End AI Solution using PyTorch",
+        "content": "Language Identification is the process of identifying the primary language from multiple audio input samples. In natural language processing (NLP), language identification is an important problem and a challenging issue. There are many language-related tasks such as entering text on your phone, finding news articles you enjoy, or discovering answers to questions that you may have. All these tasks are powered by NLP models. To decide which model to invoke at a particular point in time, we must..."
+    },
+    {
+        "link": "https://pytorch.org/blog/announcing-docathon/",
+        "title": "Announcing PyTorch Docathon 2023",
+        "content": ""
+    },
+    {
+        "link": "https://pytorch.org/blog/accelerated-image-seg/",
+        "title": "Accelerated Image Segmentation using PyTorch",
+        "content": "Using Intel\u00ae Extension for PyTorch to Boost Image Processing Performance"
+    },
+    {
+        "link": "https://pytorch.org/blog/introducing-hidet/",
+        "title": "Introducing Hidet: A Deep Learning Compiler for Efficient Model Serving",
+        "content": "Hidet is a powerful deep learning compiler that simplifies the process of implementing high-performing deep learning operators on modern accelerators (e.g., NVIDIA GPUs). With the new feature of torch.compile(...) in PyTorch 2.0, integrating a novel compiler into PyTorch is easier than ever - Hidet now can be used as a torch.compile(...) backend to accelerate PyTorch models, making it an attractive option for PyTorch users who want to improve the inference performance of their models, especia..."
+    },
+    {
+        "link": "https://pytorch.org/blog/experience-power-pytorch-2.0/",
+        "title": "Experience the power of PyTorch 2.0 on AMD Solutions",
+        "content": "PyTorch 2.0 represents a significant step forward for the PyTorch machine learning framework. The stable release of PyTorch 2.0 brings new features that unlock even higher performance, while remaining backward compatible with prior releases and retaining the Pythonic focus which has helped to make PyTorch so enthusiastically adopted by the AI/ML community. AMD has long been a strong proponent of PyTorch, and we are delighted that the PyTorch 2.0 stable release includes support for AMD Instin..."
+    },
+    {
+        "link": "https://pytorch.org/blog/accelerated-generative-diffusion-models/",
+        "title": "Accelerated Generative Diffusion Models with PyTorch 2",
+        "content": "TL;DR: PyTorch 2.0 nightly offers out-of-the-box performance improvement for Generative Diffusion models by using the new torch.compile() compiler and optimized implementations of Multihead Attention integrated with PyTorch 2."
+    },
+    {
+        "link": "https://pytorch.org/blog/straggler-mitigation/",
+        "title": "Straggler Mitigation On PyTorch DDP By Hierarchical SGD",
+        "content": "PyTorch DDP has been widely adopted across the industry for distributed training, which by default runs synchronous SGD to synchronize gradients across model replicas at every step. The performance of this technique is critical for fast iteration during model exploration as well as resource and cost saving. The performance is critical for fast iteration and cost saving of model development and exploration. To resolve a ubiquitous performance bottleneck introduced by slow nodes in large-scale ..."
+    },
+    {
+        "link": "https://pytorch.org/blog/celebrate-pytorch-2.0/",
+        "title": "Celebrate PyTorch 2.0 with New Performance Features for AI Developers",
+        "content": "Congratulations to the PyTorch Foundation for its release of PyTorch 2.0! In this blog, I discuss the four features for which Intel made significant contributions to PyTorch 2.0:"
+    },
+    {
+        "link": "https://pytorch.org/blog/pytorch-2.0-xla-path-forward/",
+        "title": "PyTorch & OpenXLA: The Path Forward",
+        "content": "As we celebrate the release of OpenXLA, PyTorch 2.0, and PyTorch/XLA 2.0, it\u2019s worth taking a step back and sharing where we see it all going in the short to medium term. With PyTorch adoption leading in the AI space and XLA supporting best-in-class compiler features, PyTorch/XLA is well positioned to provide a cutting edge development stack for both model training and inference. To achieve this, we see investments in three main areas:"
+    },
+    {
+        "link": "https://pytorch.org/blog/accelerated-pytorch-2/",
+        "title": "Accelerated PyTorch 2 Transformers",
+        "content": "The PyTorch 2.0 release includes a new high-performance implementation of the PyTorch Transformer API with the goal of making training and deployment of state-of-the-art Transformer models affordable. Following the successful release of \u201cfastpath\u201d inference execution (\u201cBetter Transformer\u201d), this release introduces high-performance support for training and inference using a custom kernel architecture for scaled dot product attention (SPDA)."
+    },
+    {
+        "link": "https://pytorch.org/blog/pytorch-2.0-xla/",
+        "title": "PyTorch 2.0 & XLA\u2014The Latest Cutting Edge Features",
+        "content": "Today, we are excited to share our latest work for PyTorch/XLA 2.0. The release of PyTorch 2.0 is yet another major milestone for this storied community and we are excited to continue to be part of it. When the PyTorch/XLA project started in 2018 between Google and Meta, the focus was on bringing cutting edge Cloud TPUs to help support the PyTorch community. Along the way, others in the community such as Amazon joined the project and very quickly the community expanded. We are excited about X..."
+    },
+    {
+        "link": "https://pytorch.org/blog/pytorch-2.0-release/",
+        "title": "PyTorch 2.0: Our next generation release that is faster, more Pythonic and Dynamic as ever",
+        "content": "We are excited to announce the release of PyTorch\u00ae 2.0 which we highlighted during the PyTorch Conference on 12/2/22! PyTorch 2.0 offers the same eager-mode development and user experience, while fundamentally changing and supercharging how PyTorch operates at compiler level under the hood with faster performance and support for Dynamic Shapes and Distributed."
+    },
+    {
+        "link": "https://pytorch.org/blog/new-library-updates-in-pytorch-2.0/",
+        "title": "New Library Updates in PyTorch 2.0",
+        "content": "Summary"
+    },
+    {
+        "link": "https://pytorch.org/blog/democratizing-ai-with-pytorch/",
+        "title": "Democratizing AI with PyTorch Foundation and ROCm\u2122 support for PyTorch",
+        "content": ""
+    },
+    {
+        "link": "https://pytorch.org/blog/deprecation-cuda-python-support/",
+        "title": "Deprecation of CUDA 11.6 and Python 3.7 Support",
+        "content": "For the upcoming PyTorch 2.0 feature release (target March 2023), we will target CUDA 11.7 as the stable version and CUDA 11.8 as the experimental version of CUDA and Python >=3.8, <=3.11."
+    },
+    {
+        "link": "https://pytorch.org/blog/trace-analysis-for-masses/",
+        "title": "PyTorch Trace Analysis for the Masses",
+        "content": "We are excited to announce the public release of Holistic Trace Analysis (HTA), an open source performance analysis and visualization Python library for PyTorch users. HTA takes as input Kineto traces collected by the PyTorch profiler, which are complex and challenging to interpret, and up-levels the performance information contained in these traces. It was initially developed internally at Meta to understand and debug performance problems for large-scale distributed training jobs on GPUs. Th..."
+    },
+    {
+        "link": "https://pytorch.org/blog/compromised-nightly-dependency/",
+        "title": "Compromised PyTorch-nightly dependency chain between December 25th and December 30th, 2022.",
+        "content": "If you installed PyTorch-nightly on Linux via pip between December 25, 2022 and December 30, 2022, please uninstall it and torchtriton immediately, and use the latest nightly binaries (newer than Dec 30th 2022)."
+    },
+    {
+        "link": "https://pytorch.org/blog/torchserve-performance-tuning/",
+        "title": "Torchserve Performance Tuning, Animated Drawings Case-Study",
+        "content": "In this post we discuss performance tuning of Torchserve for serving your models in production. One of the biggest challenges in the life cycle of a ML project is deploying models in production. This requires a reliable serving solution along with solutions that address the MLOps needs. A robust serving solution needs to provide support for multi model serving, model versioning, metric logging, monitoring and scaling to serve the peak traffic. In this post, we will have an overview of Torchs..."
+    },
+    {
+        "link": "https://pytorch.org/blog/efficient-large-scale-training-with-pytorch/",
+        "title": "Efficient Large-Scale Training with Pytorch FSDP and AWS",
+        "content": "Cutting-edge AI models are becoming extremely large. The cost and overhead of training these models is increasing rapidly, and involves large amounts of engineering and guesswork to find the right training regime. FSDP reduces these costs significantly by enabling you to train much larger models with the same amount of resources. FSDP lowers the memory footprint on your GPUs, and is usable via a lightweight configuration that requires substantially less effort, typically with just a few lines..."
+    },
+    {
+        "link": "https://pytorch.org/blog/scaling-pytorch-fsdp-for-training-foundation-models-on-ibm-cloud/",
+        "title": "Scaling PyTorch FSDP for Training Foundation Models on IBM Cloud",
+        "content": "Large model training using a cloud native approach is of growing interest for many enterprises given the emergence and success of foundation models. Some AI practitioners may assume that the only way they can achieve high GPU utilization for distributed training jobs is to run them on HPC systems, such as those inter-connected with Infiniband and may not consider Ethernet connected systems. We demonstrate how the latest distributed training technique, Fully Sharded Data Parallel (FSDP) from P..."
+    },
+    {
+        "link": "https://pytorch.org/blog/getting-started-with-pytorch-2.0/",
+        "title": "Get Started with PyTorch 2.0 Summary and Overview",
+        "content": "Introducing PyTorch 2.0, our first steps toward the next generation 2-series release of PyTorch. Over the last few years we have innovated and iterated from PyTorch 1.0 to the most recent 1.13 and moved to the newly formed PyTorch Foundation, part of the Linux Foundation."
+    },
+    {
+        "link": "https://pytorch.org/blog/Accelerating-Hugging-Face-and-TIMM-models/",
+        "title": "Accelerating Hugging Face and TIMM models with PyTorch 2.0",
+        "content": "torch.compile() makes it easy to experiment with different compiler backends to make PyTorch code faster with a single line decorator torch.compile(). It works either directly over an nn.Module as a drop-in replacement for torch.jit.script() but without requiring you to make any source code changes. We expect this one line code change to provide you with between 30%-2x training time speedups on the vast majority of models that you\u2019re already running."
+    },
+    {
+        "link": "https://pytorch.org/blog/optimizing-production-pytorch-performance-with-graph-transformations/",
+        "title": "Optimizing Production PyTorch Models\u2019 Performance with Graph Transformations",
+        "content": "1. Introduction"
+    },
+    {
+        "link": "https://pytorch.org/blog/effective-multi-objective-nueral-architecture/",
+        "title": "Efficient Multi-Objective Neural Architecture Search with Ax",
+        "content": "tl;dr"
+    },
+    {
+        "link": "https://pytorch.org/blog/scaling-multimodal-foundation-models-in-torchmultimodal-with-pytorch-distributed/",
+        "title": "Scaling Multimodal Foundation Models in TorchMultimodal with Pytorch Distributed",
+        "content": "Introduction"
+    }
+]

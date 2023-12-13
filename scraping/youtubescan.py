@@ -26,27 +26,30 @@ options.add_argument('window-size=1920x1080')
 options.add_argument("disable-gpu")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-driver.get("https://deepmind.google/")
-time.sleep(3)
-
 current_datetime = datetime.now()
 formatted_datetime = current_datetime.strftime("%Y/%m/%d %H:%M:%S")
 
-outData = []
-elements = driver.find_elements(By.CSS_SELECTOR, "a.glue-card")
-for c in range(0, len(elements)):
-    try:
-        link = elements[c].get_attribute('href')
-        source = elements[c].find_element(By.TAG_NAME, "source").get_attribute('srcset')
-        title = elements[c].find_element(By.CSS_SELECTOR, "p.glue-headline").get_attribute('innerHTML')
-        content = elements[c].find_element(By.CSS_SELECTOR, "p.glue-card__description").get_attribute('innerHTML')
-        print("link: " + link)
-        outData.append({"link": link, "imgSource": source, "title": title, "content": content, "time": formatted_datetime})
-    except:
-        print("error")
-driver.close()
+links = []
+with open('youtubelinks.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        links.append(row[0])  # Assuming the links are in the first column
+        print("link" + row[0])
 
-with open('../public/scaned deepmind google.json', 'r') as file:
+outData = []
+for link in links:
+    driver.get(link)
+    time.sleep(3)
+    elements = driver.find_elements(By.CSS_SELECTOR, "a#video-title-link")
+    for c in range(0, len(elements)):
+        link = elements[c].get_attribute('href')
+        label = elements[c].get_attribute('aria-label')
+        title = elements[c].get_attribute('title')
+        outData.append({"link": link, "content": label, "title": title, "time": formatted_datetime})
+        print("link: " + link)
+driver.quit()
+
+with open('../json/scaned youtube.json', 'r') as file:
     # Load the JSON data from the file
     origin_data = json.load(file)
 existing_array = origin_data
@@ -55,6 +58,6 @@ for c in range (0, len(outData)):
     title_exists = any(obj["title"] == new_object["title"] for obj in existing_array)
     if not title_exists:
         existing_array.append(new_object)
-with open("../public/scaned deepmind google.json", "w") as file:
+with open("../json/scaned youtube.json", "w") as file:
     json.dump(existing_array, file)
-driver.quit()
+# driver.quit()

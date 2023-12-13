@@ -58,7 +58,7 @@ for c in range (0, len(links)):
 #     json.dump(outData, file)
 # driver.quit()
 
-with open('../public/scaned zapier.json', 'r') as file:
+with open('../json/scaned zapier.json', 'r') as file:
     # Load the JSON data from the file
     origin_data = json.load(file)
 existing_array = origin_data
@@ -67,6 +67,6 @@ for c in range (0, len(outData)):
     title_exists = any(obj["title"] == new_object["title"] for obj in existing_array)
     if not title_exists:
         existing_array.append(new_object)
-with open("../public/scaned zapier.json", "w") as file:
+with open("../json/scaned zapier.json", "w") as file:
     json.dump(existing_array, file)
 driver.quit()

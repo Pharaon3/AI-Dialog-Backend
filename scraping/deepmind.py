@@ -26,30 +26,27 @@ options.add_argument('window-size=1920x1080')
 options.add_argument("disable-gpu")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-driver.get("https://www.make.com/en/blog")
+driver.get("https://deepmind.google/")
 time.sleep(3)
 
 current_datetime = datetime.now()
 formatted_datetime = current_datetime.strftime("%Y/%m/%d %H:%M:%S")
 
 outData = []
-elements = driver.find_elements(By.CSS_SELECTOR, "div.post-desc-wrapper")
-print(len(elements))
+elements = driver.find_elements(By.CSS_SELECTOR, "a.glue-card")
 for c in range(0, len(elements)):
     try:
-        title = elements[c].find_element(By.CSS_SELECTOR, "h4.entry-title").text
-        titleel = elements[c].find_element(By.CSS_SELECTOR, "h4.entry-title")
-        link = titleel.find_element(By.TAG_NAME, "a").get_attribute('href')
-        content = elements[c].find_element(By.CSS_SELECTOR, "div.post-excerpt").text
+        link = elements[c].get_attribute('href')
+        source = elements[c].find_element(By.TAG_NAME, "source").get_attribute('srcset')
+        title = elements[c].find_element(By.CSS_SELECTOR, "p.glue-headline").get_attribute('innerHTML')
+        content = elements[c].find_element(By.CSS_SELECTOR, "p.glue-card__description").get_attribute('innerHTML')
         print("link: " + link)
-        print("title: " + title)
-        print("content: " + content)
-        outData.append({"link": link, "title": title, "content": content, "time": formatted_datetime})
+        outData.append({"link": link, "imgSource": source, "title": title, "content": content, "time": formatted_datetime})
     except:
         print("error")
 driver.close()
 
-with open('../public/scaned automate.json', 'r') as file:
+with open('../json/scaned deepmind google.json', 'r') as file:
     # Load the JSON data from the file
     origin_data = json.load(file)
 existing_array = origin_data
@@ -58,6 +55,6 @@ for c in range (0, len(outData)):
     title_exists = any(obj["title"] == new_object["title"] for obj in existing_array)
     if not title_exists:
         existing_array.append(new_object)
-with open("../public/scaned automate.json", "w") as file:
+with open("../json/scaned deepmind google.json", "w") as file:
     json.dump(existing_array, file)
 driver.quit()

@@ -24,37 +24,32 @@ options = webdriver.ChromeOptions()
 # options.add_argument('headless')
 options.add_argument('window-size=1920x1080')
 options.add_argument("disable-gpu")
-options.add_argument("--disable-images")
-options.add_argument("--disable-video")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+driver.get("https://www.make.com/en/blog")
+time.sleep(3)
 
 current_datetime = datetime.now()
 formatted_datetime = current_datetime.strftime("%Y/%m/%d %H:%M:%S")
 
-links = []
-with open('tensorflow.json') as file:
-    # Load the JSON data
-    tensorflowdata = json.load(file)
 outData = []
-for row in tensorflowdata:
-    driver.get(row["link"])
-    time.sleep(1)
-    title = driver.find_elements(By.CSS_SELECTOR, "div.tensorsite-detail__title")
-    content = driver.find_elements(By.CSS_SELECTOR, "div.tensorsite-detail__body")
-    imgArray = []
-    img = content[0].find_elements(By.TAG_NAME, "img")
-    for img_element in img:
-        # Get the src attribute value
-        src = img_element.get_attribute("src")
-        # Append the src value to the array
-        imgArray.append(src)
-    outData.append({"title": title[0].text, "content": content[0].text, "link": row["link"], "imgSource": imgArray, "time": formatted_datetime})
-    # Use Selenium to interact with the webpage and scrape the data you need
-# with open("make.json", "w") as file:
-#     json.dump(outData, file)
-# driver.quit()
+elements = driver.find_elements(By.CSS_SELECTOR, "div.post-desc-wrapper")
+print(len(elements))
+for c in range(0, len(elements)):
+    try:
+        title = elements[c].find_element(By.CSS_SELECTOR, "h4.entry-title").text
+        titleel = elements[c].find_element(By.CSS_SELECTOR, "h4.entry-title")
+        link = titleel.find_element(By.TAG_NAME, "a").get_attribute('href')
+        content = elements[c].find_element(By.CSS_SELECTOR, "div.post-excerpt").text
+        print("link: " + link)
+        print("title: " + title)
+        print("content: " + content)
+        outData.append({"link": link, "title": title, "content": content, "time": formatted_datetime})
+    except:
+        print("error")
+driver.close()
 
-with open('../public/scaned tensorflow.json', 'r') as file:
+with open('../json/scaned automate.json', 'r') as file:
     # Load the JSON data from the file
     origin_data = json.load(file)
 existing_array = origin_data
@@ -63,6 +58,6 @@ for c in range (0, len(outData)):
     title_exists = any(obj["title"] == new_object["title"] for obj in existing_array)
     if not title_exists:
         existing_array.append(new_object)
-with open("../public/scaned tensorflow.json", "w") as file:
+with open("../json/scaned automate.json", "w") as file:
     json.dump(existing_array, file)
 driver.quit()

@@ -31,21 +31,49 @@ formatted_datetime = current_datetime.strftime("%Y/%m/%d %H:%M:%S")
 
 outData = []
 
-driver.get("https://deepmind.google/discover/blog/")
-time.sleep(1)
-elements = driver.find_elements(By.CSS_SELECTOR, "a.glue-card")
-for c in range(0, len(elements)):
-    try:
-        link = elements[c].get_attribute('href')
-        source = elements[c].find_elements(By.TAG_NAME, "img")[0].get_attribute('src')
-        title = elements[c].find_element(By.CSS_SELECTOR, "p.glue-headline").get_attribute('innerHTML')
-        content = elements[c].find_element(By.CSS_SELECTOR, "p.glue-card__description").get_attribute('innerHTML')
-        print("link: " + link)
-        outData.append({"link": link, "imgSource": [source], "title": title, "content": content, "time": formatted_datetime})
-    except:
-        print("error")
-driver.close()
+# baseLinks = [
+#     "https://deepmind.google/discover/blog/?page=1",
+#     "https://deepmind.google/discover/blog/?page=2",
+#     "https://deepmind.google/discover/blog/?page=3",
+#     "https://deepmind.google/discover/blog/?page=4",
+#     "https://deepmind.google/discover/blog/?page=5",
+#     "https://deepmind.google/discover/blog/?page=6"
+# ]
+baseLinks = [
+    "https://deepmind.google/discover/blog/?page=1",
+    "https://deepmind.google/discover/blog/?page=2"
+]
+for baseLink in baseLinks:
+    driver.get(baseLink)
+    time.sleep(1)
+    elements = driver.find_elements(By.CSS_SELECTOR, "a.glue-card")
+    for c in range(0, len(elements)):
+        try:
+            link = elements[c].get_attribute('href')
+            source = elements[c].find_elements(By.TAG_NAME, "img")[0].get_attribute('src')
+            title = elements[c].find_element(By.CSS_SELECTOR, "p.glue-headline").get_attribute('innerHTML')
+            content = elements[c].find_element(By.CSS_SELECTOR, "p.glue-card__description").get_attribute('innerHTML')
+            print("link: " + link)
+            outData.append({"link": link, "imgSource": [source], "title": title, "content": content, "time": formatted_datetime})
+        except:
+            print("error")
+# driver.close()
 
+for c in range (0, len(outData)):
+    link = outData[c]["link"]
+    driver.get(link)
+    time.sleep(1)
+    article = driver.find_elements(By.TAG_NAME, "article")
+    content1 = article[0].text
+    img = article[0].find_elements(By.TAG_NAME, "img")
+    imgArray = []
+    for img_element in img:
+        # Get the src attribute value
+        src = img_element.get_attribute("src")
+        # Append the src value to the array
+        imgArray.append(src)
+    outData[c]["content1"] = content1
+    outData[c]["imgSource"] = imgArray
 with open('../json/scaned deepmind google.json', 'r') as file:
     # Load the JSON data from the file
     origin_data = json.load(file)

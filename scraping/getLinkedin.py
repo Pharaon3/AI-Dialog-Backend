@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-openai = OpenAI(api_key="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")
+openai = OpenAI(api_key="OPENAI_API_KEY")
 import json
 
 async def requestLinkedin(title, content):

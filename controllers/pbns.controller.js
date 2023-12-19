@@ -7,6 +7,24 @@ const path = require('path');
 
 var OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 // Retrieve all products from the database.
+exports.getImage = async (req, res) => {
+  try {
+    const image = await requestImage(req.body.content, req.body.imageCount);
+    res.status(200).send({ image: image });
+  } catch (err) {
+    console.error("Error Requesting OpenAI to generate Image");
+    res.status(500).send('Error Requesting OpenAI to generate Image');
+  }
+};
+exports.makeString = async (req, res) => {
+  try {
+    const content = await makeString(req.body.content);
+    res.status(200).send({ content: content });
+  } catch (err) {
+    console.error("Error Requesting OpenAI to generate chat String");
+    res.status(500).send('Error Requesting OpenAI to generate chat String');
+  }
+};
 exports.getLinkedin = async (req, res) => {
   console.log("Linkedin Request: ", req?.body?.title);
   try {
@@ -108,4 +126,23 @@ async function requestHebrew(content) {
 async function requestLinkedinImage(title, content) {
   const image = await openai.images.generate({ prompt: "Generate a professional and visually appealing graphic to accompany the LinkedIn post below. The post is titled " + title + " and its content is as follows:" + content.substring(0, 500) });
   return image.data;
+}
+async function requestImage(content, imageCount = 1) {
+  const image = await openai.images.generate({ 
+    quality: "standard",
+    model:"dall-e-3",
+    prompt: content.substring(0, 500), 
+    n: parseInt(imageCount) 
+  });
+  return image.data;
+}
+async function makeString(content) {
+  const completion = await openai.chat.completions.create({
+    messages: [{
+      role: "system",
+      content: content
+    }],
+    model: "gpt-3.5-turbo",
+  });
+  return completion?.choices[0]?.message?.content;
 }

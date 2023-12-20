@@ -34,30 +34,17 @@ def requestHebrew(content):
     )
     return completion.choices[0].message.content
 
-# # Assuming data.json contains the array of objects
-# with open('../json/scaned make 1.json', 'r') as file:
-#     data = json.load(file)
-
-# # Loop through each object and update with LinkedIn content
-# for obj in data:
-#     obj['linkedin'] = requestLinkedin(obj['title'], textwrap.shorten(obj['content'], width=3000))
-#     obj['tweet'] = requestTweet(obj['title'], textwrap.shorten(obj['content'], width=3000))
-
-# # Write the updated data back to the JSON file
-# with open('data.json', 'w') as file:
-#     json.dump(data, file, indent=2)
-
-
 # Assuming data.json contains the array of objects
-with open('./data.json', 'r') as file:
+with open('../json/scaned zapier.json', 'r') as file:
     data = json.load(file)
 
 # Loop through each object and update with LinkedIn content
-for obj in data:
-    obj['linkedin'] = requestHebrew(textwrap.shorten(obj['linkedin'], width=3000))
-    obj['tweet'] = requestHebrew(textwrap.shorten(obj['tweet'], width=3000))
+for index, obj in enumerate(data):
+    obj['linkedin'] = requestHebrew(requestLinkedin(obj['title'], textwrap.shorten(obj['content'], width=3000)))
+    obj['tweet'] = textwrap.shorten(requestHebrew(requestTweet(obj['title'], textwrap.shorten(obj['content'], width=3000))), width=280)
+    print(f"Progress: {index + 1} / {len(data)}")
 
 # Write the updated data back to the JSON file
-with open('data1.json', 'w') as file:
+with open('../json/zapier.json', 'w') as file:
     json.dump(data, file, indent=2)
 

@@ -45,6 +45,7 @@ submitButton.click()
 # submitButton.click()
 time.sleep(5)
 outputData = outputForm.get_attribute('value')
-print(outputData)
-
+with open('outputMention.txt', 'w', encoding='utf-8') as file:
+    file.write(outputData)
+print("success")
 driver.quit()

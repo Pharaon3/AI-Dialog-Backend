@@ -39,9 +39,10 @@ exports.getLinkedin = async (req, res) => {
   }
 };
 exports.getLinkedin1 = async (req, res) => {
-  console.log("Linkedin Request 1: ", req?.body?.title);
   try {
-    const content = await requestLinkedinFromMention(req.body.content);
+    const mentionResult = await requestLinkedinFromMention(req.body.content);
+    let content = "";
+    if(mentionResult == "success") content = readFile();
     res.status(200).send({ title: req.body.title, content: content });
   } catch (err) {
     console.error("Error Requesting OpenAI to generate Linkedin Post 1");
@@ -177,4 +178,13 @@ async function makeString(content) {
     model: "gpt-3.5-turbo",
   });
   return completion?.choices[0]?.message?.content;
+}
+async function readFile() {
+  try {
+    const data = await fs.readFile('../scraping/outputMention.txt', 'utf8');
+    return data;
+  } catch (err) {
+    console.error('Error reading the file:', err);
+    return 'Error reading the file';
+  }
 }

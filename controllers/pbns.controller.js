@@ -42,8 +42,14 @@ exports.getLinkedin1 = async (req, res) => {
   try {
     const mentionResult = await requestLinkedinFromMention(req.body.content);
     let content = "";
-    if(mentionResult == "success") content = readFile();
-    res.status(200).send({ title: req.body.title, content: content });
+    if (mentionResult == "success") {
+      setTimeout(async () => {
+        content = await readFile();
+        res.status(200).send({ title: req.body.title, content: content });
+      }, 1000); // 1000 milliseconds = 1 second
+    } else {
+      res.status(200).send({ title: req.body.title, content: content });
+    }
   } catch (err) {
     console.error("Error Requesting OpenAI to generate Linkedin Post 1");
     res.status(500).send('Error Requesting OpenAI to generate Linkedin Post 1');

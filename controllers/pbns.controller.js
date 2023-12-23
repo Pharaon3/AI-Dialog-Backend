@@ -4,6 +4,7 @@ const moment = require('moment');
 const fs = require('fs');
 require('dotenv').config();
 const path = require('path');
+const { exec } = require('child_process');
 
 var OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 // Retrieve all products from the database.
@@ -38,13 +39,13 @@ exports.getLinkedin = async (req, res) => {
   }
 };
 exports.getLinkedin1 = async (req, res) => {
-  console.log("Linkedin Request: ", req?.body?.title);
+  console.log("Linkedin Request 1: ", req?.body?.title);
   try {
-    const content = await requestLinkedinFromMention(req.body.title, req.body.content);
+    const content = await requestLinkedinFromMention(req.body.content);
     res.status(200).send({ title: req.body.title, content: content });
   } catch (err) {
-    console.error("Error Requesting OpenAI to generate Linkedin Post");
-    res.status(500).send('Error Requesting OpenAI to generate Linkedin Post');
+    console.error("Error Requesting OpenAI to generate Linkedin Post 1");
+    res.status(500).send('Error Requesting OpenAI to generate Linkedin Post 1');
   }
 };
 exports.getTweet = async (req, res) => {
@@ -122,10 +123,10 @@ async function requestLinkedinFromMention1(title, content) {
 }
 function requestLinkedinFromMention(content) {
   return new Promise((resolve, reject) => {
-    exec('python scraping/getMention.py ' + content, (error, stdout, stderr) => {
+    exec('python ./scraping/getMention.py', (error, stdout, stderr) => {
       if (error) {
         console.error(`Error executing command: ${error}`);
-        return;
+        reject(`Error executing command: ${error}`);
       }
       resolve(stdout);
     });

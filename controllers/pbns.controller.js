@@ -120,15 +120,17 @@ async function requestLinkedinFromMention1(title, content) {
     return stdout;
   });
 }
-const requestLinkedinFromMention = new Promise((resolve, reject) => {
-  exec('python scraping/getMention.py ' + content, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error executing command: ${error}`);
-      return;
-    }
-    resolve(stdout);
+function requestLinkedinFromMention(content) {
+  return new Promise((resolve, reject) => {
+    exec('python scraping/getMention.py ' + content, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error executing command: ${error}`);
+        return;
+      }
+      resolve(stdout);
+    });
   });
-});
+}
 
 async function requestTweet(title, content) {
   const completion = await openai.chat.completions.create({

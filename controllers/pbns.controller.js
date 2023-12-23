@@ -37,6 +37,16 @@ exports.getLinkedin = async (req, res) => {
     res.status(500).send('Error Requesting OpenAI to generate Linkedin Post');
   }
 };
+exports.getLinkedin1 = async (req, res) => {
+  console.log("Linkedin Request: ", req?.body?.title);
+  try {
+    const content = await requestLinkedinFromMention(req.body.title, req.body.content);
+    res.status(200).send({ title: req.body.title, content: content });
+  } catch (err) {
+    console.error("Error Requesting OpenAI to generate Linkedin Post");
+    res.status(500).send('Error Requesting OpenAI to generate Linkedin Post');
+  }
+};
 exports.getTweet = async (req, res) => {
   console.log("Tweet Request: ", req?.body?.title);
   try {
@@ -101,15 +111,25 @@ async function requestLinkedin(title, content) {
   return completion?.choices[0]?.message?.content;
 }
 
+async function requestLinkedinFromMention(title, content) {
+  exec('python scraping/getMention.py ' + content, (error, stdout, stderr) => {
+    if (error) {
+        console.error(`Error executing command: ${error}`);
+        return;
+    }
+    return stdout;
+});
+}
+
 async function requestTweet(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{
       role: "system",
-      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own Tweet to fit tweet's character limitation. Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content
+      content: "Take inspiration from the following post, but rephrase and add unique insights to make it your own Tweet to fit tweet's character limitation (280 characters). Maintain a professional and engaging tone. The original post is titled " + title + " and its content is as follows: " + content
     }],
     model: "gpt-3.5-turbo",
   });
-  return completion?.choices[0]?.message?.content;
+  return completion?.choices[0]?.message?.content.substring(0, 280);
 }
 
 async function requestHebrew(content) {

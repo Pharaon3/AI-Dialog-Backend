@@ -6,6 +6,7 @@ module.exports = app => {
 
     router.post("/getImage", controller.getImage);
     router.post("/getLinkedin", controller.getLinkedin);
+    router.post("/getLinkedin1", controller.getLinkedin1);
     router.post("/getTweet", controller.getTweet);
     router.post("/getJson", controller.getJson);
     router.post("/makeString", controller.makeString);

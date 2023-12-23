@@ -111,15 +111,24 @@ async function requestLinkedin(title, content) {
   return completion?.choices[0]?.message?.content;
 }
 
-async function requestLinkedinFromMention(title, content) {
+async function requestLinkedinFromMention1(title, content) {
   exec('python scraping/getMention.py ' + content, (error, stdout, stderr) => {
     if (error) {
-        console.error(`Error executing command: ${error}`);
-        return;
+      console.error(`Error executing command: ${error}`);
+      return;
     }
     return stdout;
-});
+  });
 }
+const requestLinkedinFromMention = new Promise((resolve, reject) => {
+  exec('python scraping/getMention.py ' + content, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error executing command: ${error}`);
+      return;
+    }
+    resolve(stdout);
+  });
+});
 
 async function requestTweet(title, content) {
   const completion = await openai.chat.completions.create({
@@ -148,11 +157,11 @@ async function requestLinkedinImage(title, content) {
   return image.data;
 }
 async function requestImage(content, imageCount = 1) {
-  const image = await openai.images.generate({ 
+  const image = await openai.images.generate({
     quality: "standard",
-    model:"dall-e-3",
-    prompt: content.substring(0, 500), 
-    n: parseInt(imageCount) 
+    model: "dall-e-3",
+    prompt: content.substring(0, 500),
+    n: parseInt(imageCount)
   });
   return image.data;
 }

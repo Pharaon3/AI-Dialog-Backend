@@ -1,0 +1,20 @@
+How many minutes of your life have you wasted adjusting the margins in a Google Doc just to make the page break appear at a less awkward spot? Well, you can now waste your time adjusting other trivial app settings instead. The new Google Docs pageless mode means you can create a document with no page breaks.
+How to make Google Docs pageless
+Here's how to turn on pageless mode in Google Docs:
+Go to File > Page setup.
+Select Pageless, and press OK.
+While you're there, you can also change the background color (please don't), and set it so that all your Google Docs start as pageless (click Set as default).
+How to remove page breaks in Google Docs
+Power up your Google apps with automation
+Automate Google apps
+It's possible you're just here to learn how to remove a page break in Google Docs. In the past (and still), you could do that by double-clicking on the page break.
+It pulls your pages together, so your section headers don't end up as the last line on a page, and your images don't have a ton of white space above or below them. But it also inexplicably leaves a horizontal dotted line.
+Here's my dog, Winston, in what's now known as pages mode, after having double-clicked the page break.
+And here's Winston in pageless Google Docs.
+It's a subtle difference, but the lack of a dotted line makes it feel a little more polished. Plus, the images change size depending on the size of your screen, so Winston will always be just right.
+What else is different about the Google Docs pageless format?
+If you're using a pageless Google Doc to write a standard document, you won't notice much difference other than the lack of page breaks. But here are the main things to keep in mind.
+1. You can customize the page width
+Your doc will be infinitely long, but you get to choose how wide it is. 
+Go to View > Text width (the option is only there if you're already in pageless mode), and you can choose between Narrow, Medium, Wide, and Full. 
+Play around with it to see what you like, but Wide or

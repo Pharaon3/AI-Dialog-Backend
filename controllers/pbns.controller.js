@@ -26,7 +26,7 @@ exports.makeString = async (req, res) => {
     res.status(500).send('Error Requesting OpenAI to generate chat String');
   }
 };
-exports.getLinkedin = async (req, res) => {
+exports.getLinkedin1 = async (req, res) => {
   console.log("Linkedin Request: ", req?.body?.title);
   try {
     const content = await requestLinkedin(req.body.title, req.body.content);
@@ -37,19 +37,36 @@ exports.getLinkedin = async (req, res) => {
     console.error("Error Requesting OpenAI to generate Linkedin Post");
     res.status(500).send('Error Requesting OpenAI to generate Linkedin Post');
   }
-};
-exports.getLinkedin1 = async (req, res) => {
+}; function readFileText(filename, callback) {
+  fs.readFile(filename, 'utf8', (err, data) => {
+    if (err) {
+      callback(err, null);
+      return;
+    }
+    callback(null, data);
+  });
+}
+
+exports.getLinkedin = async (req, res) => {
   try {
-    // const mentionResult = await requestLinkedinFromMention(req.body.content);
-    let mentionResult = "success";
+    const mentionResult = await requestLinkedinFromMention(req.body.content);
+    const image = await requestLinkedinImage(req.body.title, req.body.content);
+    // let mentionResult = "success";
     let content = "";
     if (mentionResult == "success") {
       setTimeout(async () => {
-        content = await readFile();
-        res.status(200).send({ title: req.body.title, content: content });
-      }, 1000); // 1000 milliseconds = 1 second
+        readFileText('outputMention.txt', (err, data) => {
+          if (err) {
+            console.error(err);
+            res.status(500).send('Error reading file');
+            return;
+          }
+          // res.status(200).send({ title: req.body.title, content: data });
+          res.status(200).send({ title: req.body.title, content: data, image: image });
+        });
+      }, 3000); // 1000 milliseconds = 1 second
     } else {
-      res.status(200).send({ title: req.body.title, content: content });
+      res.status(200).send({ title: "faied", content: content });
     }
   } catch (err) {
     console.error("Error Requesting OpenAI to generate Linkedin Post 1");
@@ -131,12 +148,19 @@ async function requestLinkedinFromMention1(title, content) {
 }
 function requestLinkedinFromMention(content) {
   return new Promise((resolve, reject) => {
+    fs.writeFile('contents.txt', content, 'utf8', (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log('Content has been written to the file');
+    });
     exec('python ./scraping/getMention.py', (error, stdout, stderr) => {
       if (error) {
         console.error(`Error executing command: ${error}`);
         reject(`Error executing command: ${error}`);
       }
-      resolve(stdout);
+      resolve("success");
     });
   });
 }

@@ -26,6 +26,10 @@ options.add_argument('window-size=1920x1080')
 options.add_argument("disable-gpu")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
+with open('contents.txt', 'r') as file:
+    lines = file.readlines()
+    content = ' '.join([line.strip() for line in lines])
+
 driver.get("https://mention.com/en/linkedin-post-generator/")
 time.sleep(3)
 
@@ -39,7 +43,7 @@ emailForm = driver.find_element(By.ID, "user-email")
 submitButton = driver.find_element(By.XPATH, '//*[@id="men__bio-generator"]/div/div[3]/form/div[4]/input')
 outputForm = driver.find_element(By.ID, "generated-bio")
 
-inputForm.send_keys("Give me a linkedin post.")
+inputForm.send_keys(content)
 emailForm.send_keys("edmonddantes000313@gmail.com")
 submitButton.click()
 # submitButton.click()

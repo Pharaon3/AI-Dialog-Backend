@@ -55,14 +55,15 @@ exports.getLinkedin = async (req, res) => {
     let content = "";
     if (mentionResult == "success") {
       setTimeout(async () => {
-        readFileText('mentionLinkedin.txt', (err, data) => {
+        readFileText('mentionLinkedin.txt', async (err, data) => {
           if (err) {
             console.error(err);
             res.status(500).send('Error reading file');
             return;
           }
           // res.status(200).send({ title: req.body.title, content: data });
-          res.status(200).send({ title: req.body.title, content: data, image: image });
+          const contentHebrew = await requestHebrew(data, "Transalte it in Hebrew. ");
+          res.status(200).send({ title: req.body.title, content: contentHebrew, image: image });
         });
       }, 3000); // 1000 milliseconds = 1 second
     } else {
@@ -92,14 +93,15 @@ exports.getTweet = async (req, res) => {
     let content = "";
     if (mentionResult == "success") {
       setTimeout(async () => {
-        readFileText('mentionTweet.txt', (err, data) => {
+        readFileText('mentionTweet.txt', async (err, data) => {
           if (err) {
             console.error(err);
             res.status(500).send('Error reading file');
             return;
           }
           // res.status(200).send({ title: req.body.title, content: data });
-          res.status(200).send({ title: req.body.title, content: data });
+          const contentHebrew = await requestHebrew(data, "Transalte it in Hebrew with character limit of 280. ");
+          res.status(200).send({ title: req.body.title, content: contentHebrew });
         });
       }, 3000); // 1000 milliseconds = 1 second
     } else {
@@ -218,11 +220,11 @@ async function requestTweet(title, content) {
   return completion?.choices[0]?.message?.content.substring(0, 280);
 }
 
-async function requestHebrew(content) {
+async function requestHebrew(content, prompt) {
   const completion = await openai.chat.completions.create({
     messages: [{
       role: "system",
-      content: "Transalte it in Hebrew. " + content
+      content: prompt + content
     }],
     model: "gpt-3.5-turbo",
   });

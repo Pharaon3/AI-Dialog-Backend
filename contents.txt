@@ -17,4 +17,31 @@ If you're using a pageless Google Doc to write a standard document, you won't no
 1. You can customize the page width
 Your doc will be infinitely long, but you get to choose how wide it is. 
 Go to View > Text width (the option is only there if you're already in pageless mode), and you can choose between Narrow, Medium, Wide, and Full. 
-Play around with it to see what you like, but Wide or
+Play around with it to see what you like, but Wide or Full (after clicking into both a million times, I still have no idea what the difference is) will give your doc the most blank-slate Notion-type vibe. Regardless of which width you choose, if you zoom in or out, the size will automatically adjust for you, so you won't lose content off the screen.
+Keep in mind that your text width choice only affects your view of the document. Everyone who views the doc will see it in pageless mode, but the specific width will vary depending on the viewer's settings.
+2. Tables are different in pageless view
+I had a heck of a time trying to format my table to look the way I wanted it to in pageless view. It was almost impossible for me to get a small-ish table to be left-aligned, and every time I adjusted a column width, it made some other questionable decisions for me.
+I'm sure I'd get the hang of it after playing around with it more, but it definitely takes some getting used to.
+The good news: in pageless format, tables will scroll left-to-right instead of smushing.
+3. Some features are missing in pageless mode
+You can't have page numbers in pageless view, which makes sense, but you also lose the ability to have columns, headers, footers, and apparently watermarks. I added most of these things to a document, and when I switched over to pageless format, they were gone. But when you switch back, they're still there—so no need to panic.
+Plus, if you have any formatting that will be "lost" in pageless mode, it'll warn you before you make the change.
+How to turn off pageless in Google Docs
+Feeling done with your pageless experiment? Here's how to get rid of pageless format in Google Docs.
+Click File > Page setup.
+If you're already in pageless format, it'll default to the Pageless tab of Page Setup. Click the Pages tab toward the top.
+Click OK.
+That's it—you turn off pageless by turning on pages.
+Pageless Google Docs: What's the verdict? 
+I'm sticking to pages for now. But I tend to use Google Docs mostly for editing blog articles, where it doesn't matter if there's an awkward page break. If you need your Google Docs to look pretty or want the more blank-slate feel, I'd say it's time to make the switch.
+Whichever you choose, you can spend more time in your docs and less time organizing them by automating Google Drive with Zapier. Do things like automatically sending notifications about new docs or automatically creating short links for your docs. Learn more about how to automate Google Drive, or get started with one of these pre-made workflows.
+Send emails from Gmail with new files from Google Drive
+Try it
+Shorten URLs for new Google Drive files
+Try it
+Zapier is a no-code automation tool that lets you connect your apps into automated workflows, so that every person and every business can move forward at growth speed. Learn more about how it works.
+Related reading:
+How to use Google Docs version history
+How to use variables in Google Docs
+How to create and autopopulate a Google Docs template
+This article was originally published in April 2022. The most recent update was in December 2023.

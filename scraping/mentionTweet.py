@@ -44,6 +44,12 @@ submitButton = driver.find_element(By.XPATH, '//*[@id="men__bio-generator"]/div/
 outputForm = driver.find_element(By.ID, "generated-bio")
 
 inputForm.send_keys(content)
+
+select_element = driver.find_element(By.ID, "tone")
+creativeOption = driver.find_element(By.XPATH, '//*[@value="creative"]')
+select_element.click()
+creativeOption.click()
+
 emailForm.send_keys("test@gmail.com")
 submitButton.click()
 # submitButton.click()

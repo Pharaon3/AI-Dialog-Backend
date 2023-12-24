@@ -30,7 +30,7 @@ with open('contents.txt', 'r') as file:
     lines = file.readlines()
     content = ' '.join([line.strip() for line in lines])
 
-driver.get("https://mention.com/en/linkedin-post-generator/")
+driver.get("https://mention.com/en/tweet-generator/")
 time.sleep(3)
 
 current_datetime = datetime.now()
@@ -44,12 +44,12 @@ submitButton = driver.find_element(By.XPATH, '//*[@id="men__bio-generator"]/div/
 outputForm = driver.find_element(By.ID, "generated-bio")
 
 inputForm.send_keys(content)
-emailForm.send_keys("edmonddantes000313@gmail.com")
+emailForm.send_keys("test@gmail.com")
 submitButton.click()
 # submitButton.click()
 time.sleep(5)
 outputData = outputForm.get_attribute('value')
-with open('outputMention.txt', 'w', encoding='utf-8') as file:
+with open('mentionTweet.txt', 'w', encoding='utf-8') as file:
     file.write(outputData)
 print("success")
 driver.quit()

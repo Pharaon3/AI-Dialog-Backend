@@ -55,7 +55,7 @@ exports.getLinkedin = async (req, res) => {
     let content = "";
     if (mentionResult == "success") {
       setTimeout(async () => {
-        readFileText('outputMention.txt', (err, data) => {
+        readFileText('mentionLinkedin.txt', (err, data) => {
           if (err) {
             console.error(err);
             res.status(500).send('Error reading file');
@@ -73,7 +73,7 @@ exports.getLinkedin = async (req, res) => {
     res.status(500).send('Error Requesting OpenAI to generate Linkedin Post 1');
   }
 };
-exports.getTweet = async (req, res) => {
+exports.getTweet1 = async (req, res) => {
   console.log("Tweet Request: ", req?.body?.title);
   try {
     const content = await requestTweet(req.body.title, req.body.content);
@@ -86,6 +86,30 @@ exports.getTweet = async (req, res) => {
 
 };
 
+exports.getTweet = async (req, res) => {
+  try {
+    const mentionResult = await requestTweetFromMention(req.body.content);
+    let content = "";
+    if (mentionResult == "success") {
+      setTimeout(async () => {
+        readFileText('mentionTweet.txt', (err, data) => {
+          if (err) {
+            console.error(err);
+            res.status(500).send('Error reading file');
+            return;
+          }
+          // res.status(200).send({ title: req.body.title, content: data });
+          res.status(200).send({ title: req.body.title, content: data });
+        });
+      }, 3000); // 1000 milliseconds = 1 second
+    } else {
+      res.status(200).send({ title: "faied", content: content });
+    }
+  } catch (err) {
+    console.error("Error Requesting OpenAI to generate Linkedin Post 1");
+    res.status(500).send('Error Requesting OpenAI to generate Linkedin Post 1');
+  }
+};
 // provide each data
 
 exports.getJson = (req, res) => {
@@ -155,7 +179,7 @@ function requestLinkedinFromMention(content) {
       }
       console.log('Content has been written to the file');
     });
-    exec('python ./scraping/getMention.py', (error, stdout, stderr) => {
+    exec('python ./scraping/mentionLinkedin.py', (error, stdout, stderr) => {
       if (error) {
         console.error(`Error executing command: ${error}`);
         reject(`Error executing command: ${error}`);
@@ -165,6 +189,24 @@ function requestLinkedinFromMention(content) {
   });
 }
 
+function requestTweetFromMention(content) {
+  return new Promise((resolve, reject) => {
+    fs.writeFile('contents.txt', content, 'utf8', (err) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log('Content has been written to the file');
+    });
+    exec('python ./scraping/mentionTweet.py', (error, stdout, stderr) => {
+      if (error) {
+        console.error(`Error executing command: ${error}`);
+        reject(`Error executing command: ${error}`);
+      }
+      resolve("success");
+    });
+  });
+}
 async function requestTweet(title, content) {
   const completion = await openai.chat.completions.create({
     messages: [{

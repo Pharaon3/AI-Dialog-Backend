@@ -40,7 +40,8 @@ exports.getLinkedin = async (req, res) => {
 };
 exports.getLinkedin1 = async (req, res) => {
   try {
-    const mentionResult = await requestLinkedinFromMention(req.body.content);
+    // const mentionResult = await requestLinkedinFromMention(req.body.content);
+    let mentionResult = "success";
     let content = "";
     if (mentionResult == "success") {
       setTimeout(async () => {
@@ -186,8 +187,9 @@ async function makeString(content) {
   return completion?.choices[0]?.message?.content;
 }
 async function readFile() {
+  const filePath = path.join(__dirname, '../outputMention.txt');
   try {
-    const data = await fs.readFile('../scraping/outputMention.txt', 'utf8');
+    const data = await fs.readFile(filePath);
     return data;
   } catch (err) {
     console.error('Error reading the file:', err);

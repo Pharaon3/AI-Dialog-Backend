@@ -237,10 +237,10 @@ async function requestLinkedinImage(title, content) {
 }
 async function requestImage(content, imageCount = 1) {
   const image = await openai.images.generate({
-    quality: "standard",
-    model: "dall-e-3",
+    // quality: "standard",
+    // model: "dall-e-3",
     prompt: content.substring(0, 500),
-    n: parseInt(imageCount)
+    // n: parseInt(imageCount)
   });
   return image.data;
 }
